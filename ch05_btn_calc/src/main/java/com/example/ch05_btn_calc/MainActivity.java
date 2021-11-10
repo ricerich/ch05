@@ -16,7 +16,9 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+//        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_table);
+
 
         //1.java 객체를 만든다
         EditText edt1 = findViewById(R.id.Edit1);;
@@ -205,6 +207,208 @@ public class MainActivity extends AppCompatActivity
                 }
             }
         });
+
+        //숫자버튼 추가
+//        Button btn00 = findViewById(R.id.BtnNum0);
+//        Button btn01 = findViewById(R.id.BtnNum1);
+//        Button btn02 = findViewById(R.id.BtnNum2);
+//        Button btn03 = findViewById(R.id.BtnNum3);
+//        Button btn04 = findViewById(R.id.BtnNum4);
+//        Button btn05 = findViewById(R.id.BtnNum5);
+//        Button btn06 = findViewById(R.id.BtnNum6);
+//        Button btn07 = findViewById(R.id.BtnNum7);
+//        Button btn08 = findViewById(R.id.BtnNum8);
+//        Button btn09 = findViewById(R.id.BtnNum9);
+
+
+
+//        int btnIdArr[] = new int[9];
+        int btnIdArr[] = {R.id.BtnNum0, R.id.BtnNum1, R.id.BtnNum2,
+                          R.id.BtnNum3, R.id.BtnNum4, R.id.BtnNum5,
+                          R.id.BtnNum6, R.id.BtnNum7, R.id.BtnNum8,
+                          R.id.BtnNum9};
+
+        Button btnArr[] = new Button[btnIdArr.length];//객체배열
+        for(int i=0; i<btnIdArr.length;++i)
+        {
+//            btnArr[i] = findViewById(R.id.BtnNum0);
+//            btnArr[i] = findViewById(R.id.BtnNum+i);
+            btnArr[i] = findViewById(btnIdArr[i]);
+        }
+
+
+        for(int i=0; i<btnArr.length;++i)
+        {
+            int final_i = i;
+    //        btn01.setOnClickListener(new View.OnClickListener() {
+            btnArr[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (edt1.isFocused())//포커스가 edt1에 있을때
+                    {
+                        edt1.setText(edt1.getText().toString() + final_i);
+                    } else if (edt2.isFocused())//포커스가 edt2에 있을때
+                    {
+                        edt2.setText(edt2.getText().toString() + final_i);
+                    }
+
+                }
+            });
+        }
+
+//        btn00.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(edt1.isFocused())//포커스가 edt1에 있을때
+//                {
+//                    edt1.setText(edt1.getText().toString()+"0");
+//                }
+//                else if(edt2.isFocused())//포커스가 edt2에 있을때
+//                {
+//                    edt2.setText(edt2.getText().toString()+"0");
+//                }
+//
+//            }
+//        });
+
+//    btn01 = findViewById(R.id.BtnNum3);
+
+
+
+//        btn01.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(edt1.isFocused())//포커스가 edt1에 있을때
+//                {
+//                    edt1.setText(edt1.getText().toString()+"1");
+//                }
+//                else if(edt2.isFocused())//포커스가 edt2에 있을때
+//                {
+//                    edt2.setText(edt2.getText().toString()+"1");
+//                }
+//
+//            }
+//        });
+
+//        btn02.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(edt1.isFocused())//포커스가 edt1에 있을때
+//                {
+//                    edt1.setText(edt1.getText().toString()+"2");
+//                }
+//                else if(edt2.isFocused())//포커스가 edt2에 있을때
+//                {
+//                    edt2.setText(edt2.getText().toString()+"2");
+//                }
+//
+//            }
+//        });
+//
+//        btn03.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(edt1.isFocused())//포커스가 edt1에 있을때
+//                {
+//                    edt1.setText(edt1.getText().toString()+"3");
+//                }
+//                else if(edt2.isFocused())//포커스가 edt2에 있을때
+//                {
+//                    edt2.setText(edt2.getText().toString()+"3");
+//                }
+//
+//            }
+//        });
+//
+//        btn04.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(edt1.isFocused())//포커스가 edt1에 있을때
+//                {
+//                    edt1.setText(edt1.getText().toString()+"4");
+//                }
+//                else if(edt2.isFocused())//포커스가 edt2에 있을때
+//                {
+//                    edt2.setText(edt2.getText().toString()+"4");
+//                }
+//
+//            }
+//        });
+//
+//        btn05.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(edt1.isFocused())//포커스가 edt1에 있을때
+//                {
+//                    edt1.setText(edt1.getText().toString()+"5");
+//                }
+//                else if(edt2.isFocused())//포커스가 edt2에 있을때
+//                {
+//                    edt2.setText(edt2.getText().toString()+"5");
+//                }
+//
+//            }
+//        });
+//
+//        btn06.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(edt1.isFocused())//포커스가 edt1에 있을때
+//                {
+//                    edt1.setText(edt1.getText().toString()+"6");
+//                }
+//                else if(edt2.isFocused())//포커스가 edt2에 있을때
+//                {
+//                    edt2.setText(edt2.getText().toString()+"6");
+//                }
+//
+//            }
+//        });
+//
+//        btn07.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(edt1.isFocused())//포커스가 edt1에 있을때
+//                {
+//                    edt1.setText(edt1.getText().toString()+"7");
+//                }
+//                else if(edt2.isFocused())//포커스가 edt2에 있을때
+//                {
+//                    edt2.setText(edt2.getText().toString()+"7");
+//                }
+//
+//            }
+//        });
+//
+//        btn08.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(edt1.isFocused())//포커스가 edt1에 있을때
+//                {
+//                    edt1.setText(edt1.getText().toString()+"8");
+//                }
+//                else if(edt2.isFocused())//포커스가 edt2에 있을때
+//                {
+//                    edt2.setText(edt2.getText().toString()+"8");
+//                }
+//
+//            }
+//        });
+//
+//        btn09.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(edt1.isFocused())//포커스가 edt1에 있을때
+//                {
+//                    edt1.setText(edt1.getText().toString()+"9");
+//                }
+//                else if(edt2.isFocused())//포커스가 edt2에 있을때
+//                {
+//                    edt2.setText(edt2.getText().toString()+"9");
+//                }
+//
+//            }
+//        });
 
 
 
